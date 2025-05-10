@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
-{% set body_class = "locations_body" %}
 {% block content %}
 {% include "navbar.html" %}
+<head>
+      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/img/bricked.jpg') }}">
+      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/img/bricked.jpg'|replace('.jpg', '.webp')) }}" type="image/webp">
+      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/img/bricked.jpg'|replace('.jpg', '.avif')) }}" type="image/avif">
+</head>
+
+<div class="background-picture-wrapper">
+    <picture>
+        <source srcset="{{ url_for('static', filename='assets/img/bricked.jpg'|replace('.jpg', '.avif')) }}" type="image/avif">
+        <source srcset="{{ url_for('static', filename='assets/img/bricked.jpg'|replace('.jpg', '.webp')) }}" type="image/webp">
+        <img src="{{ url_for('static', filename='assets/img/bricked.jpg') }}" alt="Background_Image" class="background-picture" loading="eager">
+    </picture>
+</div>
+
 
 <div class="container py-5">
     {% for row in range(4) %}
@@ -11,11 +24,14 @@
             <div class="col-md-4 col-lg-4">
                 <a href="{{ url_for('destination', name=locations[i + start].url_name, location_id=locations[i + start].id) }}" class="text-decoration-none w-100 h-100 d-flex">
               <div class="card h-100 d-flex flex-column">
-                <img src="{{ url_for('static' ,filename='assets/img/' ~ locations[i + start].image_url) }}" class="card-img-top card-image" alt="Post 1">
+                <picture>
+                    <source srcset="{{ url_for('static', filename='assets/img/' ~ locations[i + start].image_url|replace('.jpg', '.avif')) }}" type="image/avif">
+                    <source srcset="{{ url_for('static', filename='assets/img/' ~ locations[i + start].image_url|replace('.jpg', '.webp')) }}" type="image/webp">
+                    <img src="{{ url_for('static' ,filename='assets/img/' ~ locations[i + start].image_url) }}" class="card-img-top card-image" alt="Post 1">
+                </picture>
                 <div class="card-body d-flex flex-column text-center">
                   <h5 class="card-title">{{ locations[i + start].title }}</h5>
                   <p class="card-text flex-grow-1">{{ locations[i + start].subtitle }}</p>
-                  <!--<h4>Περισσότερα</h4>-->
                 </div>
               </div>
                 </a>
