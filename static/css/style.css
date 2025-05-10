@@ -1,4 +1,5 @@
 /* DESTINATION PAGE */
+
 .dest_title{
     color: white;
     font-size: 2.8rem;
@@ -46,7 +47,7 @@
 .carousel-text {
   padding: 0.5rem 1.5rem;
   text-decoration: none;
-  pointer-events: auto; /* button klikari */
+  pointer-events: auto;
   transition: all 0.3s ease;
   color: white;
   font-size: 3.9rem;
@@ -86,7 +87,11 @@
 
 /* END DESTINATION PAGE */
 
+
+
+
 /* FOOTER CSS */
+
 .footer_text{
     color:white;
     font-size: 0.85rem;
@@ -112,25 +117,11 @@
 
 /* END FOOTER */
 
-.gradient-background {
-  background: linear-gradient(300deg, #cdd8ec, #8cb9ec, #9675f1);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
-}
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 
 /* LOCATIONS CSS */
+
 .background-picture-wrapper {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -181,9 +172,14 @@
 .card:hover .card-text {
     color: black;
 }
+
 /* END LOCATIONS CSS */
 
+
+
+
 /* NAVBAR CSS */
+
 .navbar .nav-link,
 .navbar .navbar-brand {
   color:white !important;
@@ -223,9 +219,13 @@
   color: black !important;
 }
 
-/* END OF NAVBAR CSS */
+/* END NAVBAR */
+
+
+
 
 /* HOME CSS */
+
 .carousel-click-zone {
     position: absolute;
     top: 0;
@@ -282,9 +282,26 @@
   text-shadow: 0px 3px 9px rgba(0, 0, 0, 1);
 }
 
-/* END OF HOME PAGE RAW CSS */
+/* END HOME PAGE */
+
+
+
+/* GEO ALT ICON */
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+/* END OF GEO ALT ICON */
+
+
+
+
+
 
 /* SETTINGS FOR SMALL SCREENS */
+
 @media (max-width: 576px) {
     .map-link{
         right:3%;
@@ -342,7 +359,10 @@
   }
 }
 
+
+
 /* SETTINGS FOR MEDIUM SCREENS */
+
 @media (min-width: 577px) and (max-width: 768px) {
 
     .map-link{
@@ -393,7 +413,10 @@
     }
 }
 
+
+
 /* SETTINGS FOR LARGE SCREENS */
+
 @media (min-width: 769px) and (max-width: 992px){
 
     .map-link{
@@ -442,10 +465,3 @@
     font-size: 1.8rem;
     }
 }
-
-/* GEO ALT ICON */
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
-}
-/* END OF GEO ALT ICON */
