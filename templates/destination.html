@@ -12,13 +12,21 @@
           {% endfor %}
         </div>
         <a href="{{ locations[location].url_maps }}" class="map-link">
+            <picture>
+            <source srcset="{{ url_for('static', filename='assets/img/map.jpg'|replace('.jpg', '.avif')) }}" type="image/avif">
+            <source srcset="{{ url_for('static', filename='assets/img/map.jpg'|replace('.jpg', '.avif')) }}" type="image/avif">
             <img src="{{ url_for('static', filename='assets/img/map.jpg') }}" alt="Map Icon" class="btn-icon">
+            </picture>
         </a>
 
         <div class="carousel-inner">
           {% for image in locations[location].images %}
             <div class="carousel-item {% if loop.first %}active{% endif %}">
-              <img src="{{ url_for('static' ,filename='assets/img/' ~ image) }}" class="d-block w-100" alt="...">
+              <picture>
+                <source srcset="{{ url_for('static', filename='assets/img/' ~ image|replace('.jpg', '.avif')) }}" type="image/avif">
+                <source srcset="{{ url_for('static', filename='assets/img/' ~ image|replace('.jpg', '.webp')) }}" type="image/webp">
+                <img src="{{ url_for('static' ,filename='assets/img/' ~ image) }}" class="d-block w-100" alt="image">
+              </picture>
             </div>
           {% endfor %}
             <div class="carousel-caption-center">
@@ -37,7 +45,15 @@
 
 <!-- INFO SECTION -->
 
-<div class="custom-bg-section position-relative text-light" style="--bg-image: url('{{ url_for('static',filename='assets/img/' ~ locations[location].image_url) }}');">
+<div class="position-relative text-light">
+    <div class="bg-image-wrapper">
+        <picture>
+            <source srcset="{{ url_for('static', filename='assets/img/' ~ locations[location].image_url|replace('.jpg', '.avif')) }}" type="image/avif">
+            <source srcset="{{ url_for('static', filename='assets/img/' ~ locations[location].image_url|replace('.jpg', '.webp')) }}" type="image/webp">
+            <img src="{{ url_for('static', filename='assets/img/' ~ locations[location].image_url) }}" class="bg-image" alt="Background">
+        </picture>
+    </div>
+
     <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-4">
       <div class="col-10 col-sm-8 col-lg-6">
