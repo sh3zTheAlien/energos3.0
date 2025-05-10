@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include "navbar.html" %}
+
+
+<!-- CAROUSEL SECTION -->
+<div id="carouselExampleCaptions" class="carousel slide fullscreen-carousel">
+
+        <div class="carousel-indicators">
+          {% for indicator in range(locations[location].images|length) %}
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ loop.index }}"></button>
+          {% endfor %}
+        </div>
+        <a href="{{ locations[location].url_maps }}" class="map-link">
+            <img src="{{ url_for('static', filename='assets/img/map.png') }}" alt="Map Icon" class="btn-icon">
+        </a>
+
+        <div class="carousel-inner">
+          {% for image in locations[location].images %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+              <img src="{{ url_for('static' ,filename='assets/img/' ~ image) }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+            <div class="carousel-caption-center">
+              <h1 class="carousel-text">{{ locations[location].title }}</h1>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+<!-- INFO SECTION -->
+
+<div class="custom-bg-section position-relative text-light" style="--bg-image: url('{{ url_for('static',filename='assets/img/' ~ locations[location].image_url) }}');">
+    <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-4">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/013/333/233/original/ultraviolet-glowing-neon-loading-progress-bar-icon-with-smoke-or-fog-effect-bar-uploading-led-sign-with-flashing-light-and-reflection-on-wet-floor-on-a-black-background-abstract-banner-animation-4k-video.jpg" class="d-block mx-lg-auto img-fluid rounded-5" alt="In Progress..." width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 lh-1 mb-3 dest_title">{{ locations[location].bd_title1 }}</h1>
+        <p class="dest_text">{{ locations[location].body1 }}</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/013/333/233/original/ultraviolet-glowing-neon-loading-progress-bar-icon-with-smoke-or-fog-effect-bar-uploading-led-sign-with-flashing-light-and-reflection-on-wet-floor-on-a-black-background-abstract-banner-animation-4k-video.jpg" class="d-block mx-lg-auto img-fluid rounded-5" alt="In Progress..." width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 lh-1 mb-3 dest_title">{{ locations[location].bd_title2 }}</h1>
+        <p class="dest_text">{{ locations[location].body2 }}</p>
+      </div>
+    </div>
+  </div>
+{% set footer_class='py-4 my-3' %}
+{% include 'footer.html' %}
+</div>
+
+{% endblock %}

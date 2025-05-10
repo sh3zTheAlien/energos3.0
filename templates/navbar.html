@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg fixed-top bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.google.com/maps/place/Drama+661+00/@41.1480671,24.1219872,14z/data=!3m1!4b1!4m6!3m5!1s0x14aeaad2941fd87f:0x472ba98a41f258e8!8m2!3d41.1502273!4d24.1469489!16zL20vMDFzMmJy?entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">
+            <img src="{{ url_for('static',filename='assets/img/geo.jpg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+            <strong>Νομός Δράμας</strong>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}"><strong>Αρχική</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('locations') }}"><strong>Αξιοθέατα</strong></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

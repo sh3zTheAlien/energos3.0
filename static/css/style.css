@@ -1,0 +1,511 @@
+/* DESTINATION PAGE CSS */
+.dest_title{
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 950;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, .9);
+}
+
+.dest_text{
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 360;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, .8);
+}
+
+
+.map-link {
+  position: absolute;
+  top: 10%;
+  right: 3%;
+  z-index: 20;
+  background: #212529;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.map-link img {
+  margin-left: 0px;
+  height:48px;
+}
+
+.carousel-caption-center {
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.carousel-text {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  pointer-events: auto; /* button klikari */
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 3.9rem;
+  font-weight: 950;
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, .9);
+  padding: 0 1rem;
+}
+
+.custom-bg-section {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.custom-bg-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(33%) contrast(70%);
+  z-index: -1;
+}
+
+.fullscreen-carousel,
+.fullscreen-carousel .carousel-inner,
+.fullscreen-carousel .carousel-item,
+.fullscreen-carousel .carousel-item img {
+    height: 100vh;
+}
+
+.fullscreen-carousel .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+}
+
+/* END OF SINGLE PAGE CSS */
+
+/* FOOTER CSS */
+.footer_text{
+    color:white;
+    font-size: 0.85rem;
+    font-weight:200;
+    text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.sticky-footer2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* END OF FOOTER CSS */
+
+.gradient-background {
+  background: linear-gradient(300deg, #cdd8ec, #8cb9ec, #9675f1);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* LOCATIONS CSS */
+body.locations_body {
+            background-image: url('/static/assets/img/bricked.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+}
+
+body.locations_body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.card-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    background-color: rgba(70, 67, 67, 0.85);
+    color: white;
+}
+
+
+
+.card-title, .card-text{
+        color:white;
+        font-weight: 900;
+}
+
+.card-title{
+    font-size:1.93rem;
+}
+
+.card-text{
+    font-weight: 150;
+    font-size:1.1rem;
+}
+
+.card:hover {
+  transform: scale(1.10);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.3s ease;
+}
+
+.card:hover .card-title,
+.card:hover .card-text {
+    color: black;
+}
+
+/* END LOCATIONS CSS */
+
+/* NAVBAR CSS */
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color:white !important;
+  font-weight:700;
+  font-size:1.15rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  transition: all 0.3s ease;
+  padding: 10px 16px;
+  margin: 0 4px;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black !important;
+}
+
+/* END OF NAVBAR CSS */
+
+/* HOME CSS */
+
+.carousel-click-zone {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 10;
+    cursor: default;
+}
+.left-zone {
+    left: 0;
+}
+.right-zone {
+    right: 0;
+}
+
+.c-item {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.c-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(53%) contrast(70%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.centered-caption {
+  color: white !important;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  max-width: 100%;
+  z-index: 1; /* ensures it appears above the image */
+}
+
+.centered-caption h1 {
+  font-size: 4rem;
+  font-weight: 750;
+  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.6);
+}
+
+.centered-caption h4 {
+  font-size: 1.95rem;
+  font-weight: 400;
+  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.6);
+}
+
+
+/*
+.c-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-image: inherit;
+  filter: brightness(53%) contrast(70%);
+}
+
+.c-item {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.c-image {
+   display:none;
+}
+
+.centered-caption {
+  color:white !important;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.centered-caption h1 {
+  font-size: 4rem;
+  font-weight: 750;
+  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.6);
+}
+
+.centered-caption h4 {
+  font-size: 1.95rem;
+  font-weight: 400;
+  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.6);
+}*/
+/* END OF HOME PAGE RAW CSS */
+
+/* SETTINGS FOR SMALL SCREENS */
+@media (max-width: 576px) {
+    .map-link{
+        right:3%;
+    }
+
+    .map-link img {
+        height:38px;
+    }
+
+    .carousel-text {
+        font-size: 2.6rem;
+        margin-bottom:2%;
+    }
+
+    .footer_text{
+    color:white;
+    font-size: 0.8rem;
+    font-weight:300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,1);
+    padding: 0.1rem;
+    }
+
+    .card{
+        margin:2rem ;
+    }
+
+    .card-image {
+    height: 230px;
+    object-fit: cover;
+    }
+
+
+  .card-title, .card-text{
+        color:white;
+        font-weight: 900;
+        border-color: white;
+        border-width: 0.120rem;
+    }
+
+    .card-title{
+        font-size:2rem;
+    }
+
+    .card-text{
+        font-weight: 300;
+        font-size:1.15rem;
+    }
+
+  .centered-caption h1 {
+    font-size: 2.8rem;
+  }
+
+  .centered-caption h4 {
+    font-size: 1.5rem;
+  }
+}
+
+/* SETTINGS FOR MEDIUM SCREENS */
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .map-link{
+        right:3%;
+    }
+
+    .map-link img {
+        height:42px;
+    }
+
+    .carousel-text {
+        font-size: 3.5rem;
+    }
+
+
+    .card{
+        margin:1rem ;
+    }
+
+    .card-image {
+    height: 290px;
+    object-fit: cover;
+    }
+
+    .card-title, .card-text{
+        color:white;
+        font-weight: 900;
+        border-color: white;
+        border-width: 0.120rem;
+    }
+
+    .card-title{
+        font-size:2.1rem;
+    }
+
+    .card-text{
+        font-weight: 300;
+        font-size:1.25rem;
+    }
+
+    .centered-caption h1 {
+    font-size: 3.5rem;
+    }
+
+    .centered-caption h4 {
+
+    font-size: 1.65rem;
+    }
+}
+
+/* SETTINGS FOR LARGE SCREENS */
+@media (min-width: 769px) and (max-width: 992px){
+
+    .map-link{
+        right:3%;
+    }
+
+    .map-link img {
+        height:45px;
+    }
+
+    .carousel-text {
+        font-size: 3.7rem;
+    }
+
+    .card{
+        margin-left:-0.5rem ;
+        margin-right:-0.5rem;
+    }
+
+    .card-image {
+    height: 290px;
+    object-fit: cover;
+    }
+
+    .card-title , .card-text{
+        color:white;
+        font-weight: 900;
+        border-color: white;
+        border-width: 0.120rem;
+    }
+
+    .card-title{
+        font-size:1.69rem;
+    }
+
+    .card-text{
+        font-weight: 100;
+        font-size:1rem;
+    }
+
+    .centered-caption h1 {
+    font-size: 3.8rem;
+    }
+
+    .centered-caption h4 {
+    font-size: 1.8rem;
+    }
+}
+
+/* GEO ALT ICON */
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+/* END OF GEO ALT ICON */

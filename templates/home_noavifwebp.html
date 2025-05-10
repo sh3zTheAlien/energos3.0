@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include "navbar.html" %}
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="7000">
+    <div class="carousel-click-zone left-zone"></div>
+    <div class="carousel-click-zone right-zone"></div>
+    <div class="carousel-inner">
+            {% for location in locations %}
+            <div class="carousel-item {% if loop.first %}active{% endif %} c-item">
+              <picture>
+                <img src="{{ url_for('static', filename='assets/img/' ~ location.image_url) }}"
+             class="c-image d-block w-100"
+             alt="{{ location.title }}"
+             loading="lazy">
+              </picture>
+                    <div class="carousel-caption d-block text-center centered-caption">
+                        <h1>{{ location.title }}</h1>
+                        <h4>{{ location.subtitle }}</h4>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% set footer_class='sticky-footer my-3' %}
+{% include 'footer.html' %}
+    <script>
+        document.querySelector('.left-zone').addEventListener('click', function () {
+            const carousel = document.querySelector('#hero-carousel');
+            const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+            bsCarousel.prev();
+        });
+
+        document.querySelector('.right-zone').addEventListener('click', function () {
+            const carousel = document.querySelector('#hero-carousel');
+            const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+            bsCarousel.next();
+        });
+    </script>
+{% endblock %}
