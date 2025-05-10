@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 {% include "navbar.html" %}
+<head>
+    {% for location in locations %}
+      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/img/' ~ location.image_url) }}">
+      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/img/' ~ location.image_url|replace('.jpg', '.webp')) }}" type="image/webp">
+      <link rel="preload" as="image" href="{{ url_for('static', filename='assets/img/' ~ location.image_url|replace('.jpg', '.avif')) }}" type="image/avif">
+    {% endfor %}
+</head>
+
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="7000">
     <div class="carousel-click-zone left-zone"></div>
     <div class="carousel-click-zone right-zone"></div>
@@ -9,11 +17,11 @@
             <div class="carousel-item {% if loop.first %}active{% endif %} c-item">
               <picture>
                   <source srcset="{{ url_for('static', filename='assets/img/' ~ location.image_url|replace('.jpg', '.avif')) }}" type="image/avif">
-        <source srcset="{{ url_for('static', filename='assets/img/' ~ location.image_url|replace('.jpg', '.webp')) }}" type="image/webp">
-                <img src="{{ url_for('static', filename='assets/img/' ~ location.image_url) }}"
+                  <source srcset="{{ url_for('static', filename='assets/img/' ~ location.image_url|replace('.jpg', '.webp')) }}" type="image/webp">
+                  <img src="{{ url_for('static', filename='assets/img/' ~ location.image_url) }}"
              class="c-image d-block w-100"
              alt="{{ location.title }}"
-             loading="lazy">
+             loading="eager">
               </picture>
                     <div class="carousel-caption d-block text-center centered-caption">
                         <h1>{{ location.title }}</h1>
